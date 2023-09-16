@@ -106,5 +106,15 @@ namespace Instagram.Controllers
 
 
         }
-    }
+
+        [HttpDelete]
+        [Route("{sifra:int}")]
+        [Produces("application/json")]
+        public IActionResult Delete(int sifra)
+        {
+            if (sifra <= 0)
+            {
+                return BadRequest();
+            }
+        }
 }
