@@ -116,5 +116,22 @@ namespace Instagram.Controllers
             {
                 return BadRequest();
             }
+            var osobaBaza = _context.Osoba.Find(sifra);
+            if (osobaBaza == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _context.Osoba.Remove(osobaBaza);
+                _context.SaveChanges();
+                return new JsonResult("{\"poruka\":\"Obrisano\"}");
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult("{\"poruka\":\"Ne može se obrisati\"}");
+            }
+
         }
+    }
 }
