@@ -11,4 +11,5 @@ namespace WebAPI.Data
         }
         public DbSet<Osoba> Osoba { get; set; }
         public DbSet<Komentar> Komentar { get; set; }
+        public DbSet<Objava> Objava { get; set; }
     
