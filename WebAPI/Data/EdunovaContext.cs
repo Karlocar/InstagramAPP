@@ -12,4 +12,12 @@ namespace WebAPI.Data
         public DbSet<Osoba> Osoba { get; set; }
         public DbSet<Komentar> Komentar { get; set; }
         public DbSet<Objava> Objava { get; set; }
+        protected override void OnModelCreating(
+            ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Komentar>().HasOne(g => g.Osoba);
+            modelBuilder.Entity<Komentar>().HasOne(g => g.Objava);
+        }
+    }
+}
     
