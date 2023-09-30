@@ -8,8 +8,8 @@ namespace WebAPI.Models
         [Required]
 
         public DateTime? Vrijemekomentara { get; set; }
-        public string? opis { get; set; }
-        public int? objava { get; set; }
-        public string? osoba { get; set; }
+        public string? Opis { get; set; }
+        public int? Objava { get; set; }
+        public string? Osoba { get; set; }
     }
 }
