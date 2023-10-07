@@ -4,6 +4,7 @@ using WebApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -74,7 +75,9 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 app.UseStaticFiles();
+
 app.UseCors("CorsPolicy");
+
 app.UseDefaultFiles();
 app.UseDeveloperExceptionPage();
 app.MapFallbackToFile("index.html");
