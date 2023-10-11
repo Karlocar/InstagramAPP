@@ -1,15 +1,11 @@
-﻿using Instagram.Models;
-using System.ComponentModel.DataAnnotations;
-
-namespace WebAPI.Models
+﻿namespace WebApi.Models
 {
     public class Komentar : Entitet
     {
-        [Required]
-
-        public DateTime? Vrijemekomentara { get; set; }
+        public DateTime? VrijemeKomentiranja { get; set; }
         public string? Opis { get; set; }
-        public int? Objava { get; set; }
-        public string? Osoba { get; set; }
+       
+        public Objava Objava { get; set; }
+        public Osoba Osoba { get; set; }
     }
 }
