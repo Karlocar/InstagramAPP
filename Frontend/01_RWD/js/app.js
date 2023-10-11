@@ -1,7 +1,7 @@
 $(document).foundation();
 
 let podaci=[];
-let trenutnaOosoba=0;
+let trenutnaOsoba=0;
 
 function ucitajPodatke(){
     $.ajax('https://localhost:7019/swagger/index.html/,   // request url
