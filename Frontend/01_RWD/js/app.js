@@ -33,7 +33,7 @@ function definirajDogadaje(){
         const sifra = element.attr('id').split('_')[1];
         console.log('Brišem: ' + sifra);
 
-        $.ajax(' + sifra, {
+        $.ajax('https://localhost:7019/swagger/index.html' + sifra, {
         type: 'DELETE',  // http method
         success: function (data, status, xhr) {
            element.parent().remove();
