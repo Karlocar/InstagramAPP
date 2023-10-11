@@ -10,7 +10,7 @@
 
         public string? IpAdresa { get; set; }
 
-        public int? Osoba { get; set; } 
+        public Osoba Osoba { get; set; } 
         public string? Slika { get; set; }
 
     }

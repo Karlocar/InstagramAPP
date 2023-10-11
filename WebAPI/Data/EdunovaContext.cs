@@ -1,13 +1,16 @@
-﻿using Instagram.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Text.RegularExpressions;
+using WebApi.Models;
 
-namespace WebAPI.Data
+namespace WebApi.Data
 {
     public class EdunovaContext : DbContext
     {
         public EdunovaContext(DbContextOptions<EdunovaContext> opcije)
-           : base(opcije) { 
+            : base(opcije) {
+
         }
         public DbSet<Osoba> Osoba { get; set; }
         public DbSet<Komentar> Komentar { get; set; }
@@ -20,4 +23,4 @@ namespace WebAPI.Data
         }
     }
 }
-    
+
