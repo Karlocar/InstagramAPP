@@ -1,10 +1,10 @@
 $(document).foundation();
 
 let podaci=[];
-let trenutniSmjer=0;
+let trenutnaOosoba=0;
 
 function ucitajPodatke(){
-    $.ajax('',   // request url
+    $.ajax('https://localhost:7019/swagger/index.html/,   // request url
     {
         success: function (data, status, xhr) {// success callback function
            // console.log(data);
@@ -106,17 +106,17 @@ $('#dodaj').click(function(){
         lozinka: lozinka,
         slika: slika};
 
-    $.ajax('', {
+    $.ajax('https://localhost:7019/swagger/index.html', {
         type: 'POST',  // http method
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify(smjer),  // data to submit
-        success: function (smjer, status, xhr) {
+        data: JSON.stringify(osoba),  // data to submit
+        success: function (osoba, status, xhr) {
             console.log(podaci);
-            podaci.push(smjer);
-            $('#podaci').append('<li>' + $('#naziv').val() + 
-            ' <a class="brisi" href="#" id="s_' + smjer.sifra + '">X</a>' + 
-            ' <a class="promjena" href="#" id="p_' + smjer.sifra + '">P</a>' + 
+            podaci.push(osoba);
+            $('#podaci').append('<li>' + $('#ime').val() + 
+            ' <a class="brisi" href="#" id="s_' + osoba.sifra + '">X</a>' + 
+            ' <a class="promjena" href="#" id="p_' + osoba.sifra + '">P</a>' + 
             '</li>');
             definirajDogadaje();
         },
@@ -179,7 +179,7 @@ $('#promjeni').click(function(){
         lozinka: lozinka,
         slika: slika};
 
-    $.ajax('' + trenutnaOsoba, {
+    $.ajax('https://localhost:7019/swagger/index.html' + trenutnaOsoba, {
         type: 'PUT',  // http method
         dataType: 'json',
         contentType: 'application/json',
