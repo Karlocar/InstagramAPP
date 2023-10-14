@@ -54,4 +54,4 @@ class ObjavarDataService{
 
 }
 
-export default new ObjavarDataService();
+export default new ObjavaDataService();
