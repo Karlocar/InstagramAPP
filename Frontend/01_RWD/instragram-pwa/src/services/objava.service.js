@@ -1,7 +1,7 @@
 import http from "../http-common";
 
 
-class ObjavarDataService{
+class ObjavaDataService{
 
     async get(){
         return await http.get('/Objava');
