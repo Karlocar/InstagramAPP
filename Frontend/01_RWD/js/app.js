@@ -58,7 +58,7 @@ function definirajDogadaje(){
             const s = podaci[i];
             if(s.sifra==sifra){
                 $('#ime').val(s.ime);
-                $('#prezime').val(s.cijena);
+                $('#prezime').val(s.prezime);
                 $('#datumrodenja').val(s.datumrodenja);
                 $('#korisnickoime').val(s.korisnickoime);
                 $('#lozinka').val(s.lozinka);
@@ -183,7 +183,7 @@ $('#promjeni').click(function(){
         type: 'PUT',  // http method
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify(smjer),  // data to submit
+        data: JSON.stringify(osoba),  // data to submit
         success: function (smjer, status, xhr) {
            // trebalo bi podvaliti na postojeći zapis.
            ucitajPodatke();
