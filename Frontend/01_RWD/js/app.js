@@ -4,7 +4,7 @@ let podaci=[];
 let trenutnaOsoba=0;
 
 function ucitajPodatke(){
-    $.ajax('https://localhost:7019/swagger/index.html/,   // request url
+    $.ajax('https://kperic-001-site1.ctempurl.com/api/v1/Osoba',   // request url
     {
         success: function (data, status, xhr) {// success callback function
            // console.log(data);
@@ -33,7 +33,7 @@ function definirajDogadaje(){
         const sifra = element.attr('id').split('_')[1];
         console.log('Brišem: ' + sifra);
 
-        $.ajax('https://localhost:7019/swagger/index.html' + sifra, {
+        $.ajax('https://kperic-001-site1.ctempurl.com/api/v1/Osoba' + sifra, {
         type: 'DELETE',  // http method
         success: function (data, status, xhr) {
            element.parent().remove();
@@ -106,7 +106,7 @@ $('#dodaj').click(function(){
         lozinka: lozinka,
         slika: slika};
 
-    $.ajax('https://localhost:7019/swagger/index.html', {
+    $.ajax('https://kperic-001-site1.ctempurl.com/api/v1/Osoba', {
         type: 'POST',  // http method
         dataType: 'json',
         contentType: 'application/json',
@@ -179,7 +179,7 @@ $('#promjeni').click(function(){
         lozinka: lozinka,
         slika: slika};
 
-    $.ajax('https://localhost:7019/swagger/index.html' + trenutnaOsoba, {
+    $.ajax('https://kperic-001-site1.ctempurl.com/api/v1/Osoba' + trenutnaOsoba, {
         type: 'PUT',  // http method
         dataType: 'json',
         contentType: 'application/json',
