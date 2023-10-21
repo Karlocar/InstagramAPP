@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
-using WebApi.Models;
+using Instagram.Models;
 
-namespace WebApi.Data
+namespace Instagram.Data
 {
     public class EdunovaContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿namespace WebApi.Models
+﻿namespace Instagram.Models
 {
     public class Objava : Entitet
     {

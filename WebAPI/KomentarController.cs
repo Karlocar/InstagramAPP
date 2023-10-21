@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApi.Data;
-using WebApi.Models;
+using Instagram.Data;
+using Instagram.Models;
 
 namespace WebApi.Controllers
 {
@@ -29,7 +29,7 @@ namespace WebApi.Controllers
             try
             {
                 var komentari = _context.Komentar.ToList();
-                if (komentari == null || komentari.Count = 0)
+                if (komentari == null || komentari.Count == 0)
                 {
                     return new EmptyResult();
                 }

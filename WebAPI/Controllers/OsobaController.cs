@@ -1,10 +1,9 @@
-using WebAPI.Data;
-using WebAPI.Models;
+using Instagram.Data;
+using Instagram.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace WebAPI.Controllers
-{
 {
 
     [ApiController]
