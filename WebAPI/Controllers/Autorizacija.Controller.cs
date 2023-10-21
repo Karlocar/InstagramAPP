@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using EdunovaApp.Data;
-using EdunovaApp.Models;
+using WebApi.Data;
+using WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
