@@ -1,4 +1,6 @@
-﻿namespace Instagram.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Instagram.Models
 {
     public class Objava : Entitet
     {
@@ -9,6 +11,7 @@
         public DateTime? VrijemeIzrade { get; set; }
 
         public string? IpAdresa { get; set; }
+        [ForeignKey("osoba")]
 
         public Osoba Osoba { get; set; } 
         public string? Slika { get; set; }

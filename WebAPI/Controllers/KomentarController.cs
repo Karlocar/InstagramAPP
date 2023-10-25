@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Instagram.Data;
 using Instagram.Models;
+using Microsoft.EntityFrameworkCore;
+using Instagram.Models.DTO;
 
 namespace Instagram.Controllers
 {
@@ -13,14 +15,17 @@ namespace Instagram.Controllers
 
       
         private readonly EdunovaContext _context;
+        private readonly ILogger<KomentarController> _logger;
 
-        public KomentarController(EdunovaContext context)
+        public KomentarController(EdunovaContext context, ILogger<KomentarController> logger)
         {
             _context = context;
+            _logger = logger;
         }
         [HttpGet]
         public IActionResult Get()
         {
+            _logger.LogInformation("Dohvaćam komentare");
             
             if (!ModelState.IsValid)
             {
@@ -28,7 +33,11 @@ namespace Instagram.Controllers
             }
             try
             {
-                var komentari = _context.Komentar.ToList();
+                var komentari=_context.Komentar
+                    .Include(s=>s.Osoba)
+                    .Include(s=> s.Objava)
+                    .ToList();
+                
                 if (komentari == null || komentari.Count == 0)
                 {
                     return new EmptyResult();
@@ -47,18 +56,34 @@ namespace Instagram.Controllers
 
 
       [HttpPost]
-        public IActionResult Post(Komentar komentar)
+        public IActionResult Post(KomentarDTO komentarDTO)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
+            }
+            if (komentarDTO.KomentarSifra<=0)
+            {
+                return BadRequest();
             }
 
             try
             {
-                _context.Komentar.Add(komentar);
+                var komentar = _context.Komentar.Find(komentarDTO.KomentarSifra);
+                if (komentar == null)
+                {
+                    return BadRequest("{\"poruka\":\"Nema komentara s tom sifrom\"}");
+                }
+                Komentar k = new()
+                {
+
+                    VrijemeKomentiranja = komentarDTO.VrijemeKomentiranja,
+                    
+                };
+                _context.Komentar.Add(k);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, komentar);
+
+                return Ok(komentarDTO);
             }
             catch (Exception ex)
             {

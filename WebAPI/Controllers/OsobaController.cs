@@ -3,7 +3,7 @@ using Instagram.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace WebAPI.Controllers
+namespace Instagram.Controllers
 {
 
     [ApiController]
