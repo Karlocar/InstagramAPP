@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rmdir ..\\..\\CSHARP\\EdunovaWebAPI\\WebaApi\\wwwroot /s /q && move /y build ../../CSHARP/EdunovaWebAPI/WebApi/wwwroot",
+    "build": "react-scripts build && rmdir  C:\\Users\\lukap\\\\OneDrive\\Dokumenti\\GitHub\\Frontend\\01_RWD\\instagram-pwa\\ /s /q && move /y build ../../Users/lukap//OneDrive/Dokumenti/GitHub/Frontend/01_RWD/instagram-pwa/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
